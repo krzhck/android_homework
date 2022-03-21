@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">task3</string>
+    <string name="home_header">Home</string>
+    <string name="detail_header">Detail</string>
+    <string name="post_0">Leclerc pole to win! Ferrari finishes P1 P2!</string>
+    <string name="post_1">Both Redbulls DNF, Merc gets a podium.</string>
+</resources>
