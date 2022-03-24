@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
     // Unique tag required for the intent extra
     public static final String EXTRA_MESSAGE
             = "com.example.task3.extra.MESSAGE";
+    public static final String EXTRA_URL
+            = "com.example.task3.extra.URL";
+    public static final String EXTRA_LOCATION
+            = "com.example.task3.extra.LOCATION";
     // Unique tag for the intent reply
     public static final int TEXT_REQUEST = 1;
 
@@ -57,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         mText = findViewById(view.getId());
         String message = mText.getText().toString();
+        String url = getString(R.string.str_url);
+        String location = getString(R.string.str_location);
         intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra(EXTRA_URL, url);
+        intent.putExtra(EXTRA_LOCATION, location);
         startActivityForResult(intent, TEXT_REQUEST);
     }
 

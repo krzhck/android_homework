@@ -1,0 +1,4 @@
+#Thu Mar 24 17:20:08 CST 2022
+base.0=/Users/krzhck/AndroidStudioProjects/week4ImplicitIntents/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

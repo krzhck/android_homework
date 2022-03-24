@@ -1,0 +1,4 @@
+com/example/android/implicitintentsreceiver/MainActivity.java
+ com.example.android.implicitintentsreceiver.MainActivity
+com/example/android/implicitintentsreceiver/BuildConfig.java
+ com.example.android.implicitintentsreceiver.BuildConfig

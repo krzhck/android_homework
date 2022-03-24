@@ -4,4 +4,7 @@
     <string name="detail_header">Detail</string>
     <string name="post_0">Leclerc pole to win! Ferrari finishes P1 P2!</string>
     <string name="post_1">Both Redbulls DNF, Merc gets a podium.</string>
+    <string name="str_url">http://developer.android.com</string>
+    <string name="str_location">Tsinghua University</string>
+    <string name="share_text_with">Share this text with:</string>
 </resources>
