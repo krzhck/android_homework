@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="max_width">370dp</dimen>
+    <dimen name="half_width">185dp</dimen>
+    <dimen name="one_third_width">123dp</dimen>
+    <dimen name="two_third_width">247dp</dimen>
+</resources>

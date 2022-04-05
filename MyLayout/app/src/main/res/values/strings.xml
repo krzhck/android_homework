@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My Layout</string>
+    <string name="header">支付</string>
+    <string name="txservice">腾讯服务</string>
+    <string name="payandreceive">收付款</string>
+    <string name="wallet">钱包</string>
+    <string name="money">¥9.25</string>
+    <string name="credit_payment">信用卡还款</string>
+    <string name="phone_payment">手机充值</string>
+    <string name="finance">理财通</string>
+    <string name="life">生活缴款</string>
+    <string name="qq">Q币充值</string>
+    <string name="city_service">城市服务</string>
+    <string name="txcharity">腾讯公益</string>
+
+</resources>
