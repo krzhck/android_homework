@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TabLayout</string>
+    <string name="title_browse">浏览</string>
+    <string name="content_publish">发布内容</string>
+    <string name="title_publish">发布</string>
+    <string name="content_search">搜索内容</string>
+    <string name="title_search">搜索</string>
+    <string name="content_personal">个人内容</string>
+    <string name="title_personal">个人</string>
+    <string name="title_all">全部</string>
+    <string name="title_followed">关注</string>
+    <string name="all_posts_content">全部动态内容</string>
+    <string name="followed_posts_content">关注动态内容</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

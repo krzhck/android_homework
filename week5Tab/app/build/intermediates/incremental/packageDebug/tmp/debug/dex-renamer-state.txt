@@ -1,0 +1,4 @@
+#Mon Apr 11 21:59:23 CST 2022
+base.0=/Users/krzhck/AndroidStudioProjects/week5Tab/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

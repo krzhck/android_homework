@@ -3,14 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12754765486911424" />
+        <entry key="app/src/main/res/drawable/ic_address_book.xml" value="0.2140625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25584363477664274" />
         <entry key="app/src/main/res/layout/activity_template.xml" value="0.15219118689864092" />
         <entry key="app/src/main/res/layout/activity_wechat.xml" value="0.31566046427662664" />
         <entry key="app/src/main/res/layout/activity_wechat_component.xml" value="0.23679106582128495" />
         <entry key="app/src/main/res/layout/component_wechat_submenu.xml" value="0.1503623188405797" />
-        <entry key="app/src/main/res/layout/fragment_1.xml" value="0.29901064826055684" />
+        <entry key="app/src/main/res/layout/fragment_1.xml" value="0.17831540074029398" />
         <entry key="app/src/main/res/layout/fragment_2.xml" value="0.6406777692474411" />
-        <entry key="app/src/main/res/menu/navigation.xml" value="0.2859375" />
+        <entry key="app/src/main/res/menu/navigation.xml" value="0.249824768755614" />
       </map>
     </option>
   </component>
