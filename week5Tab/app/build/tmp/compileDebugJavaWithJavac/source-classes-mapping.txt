@@ -1,6 +1,5 @@
-com/example/android/tabexperiment/MainActivity.java
- com.example.android.tabexperiment.MainActivity
- com.example.android.tabexperiment.MainActivity$1
+com/example/android/tabexperiment/BuildConfig.java
+ com.example.android.tabexperiment.BuildConfig
 com/example/android/tabexperiment/TabFragment2.java
  com.example.android.tabexperiment.TabFragment2
 com/example/android/tabexperiment/TabFragment1.java
@@ -9,5 +8,6 @@ com/example/android/tabexperiment/TabFragment3.java
  com.example.android.tabexperiment.TabFragment3
 com/example/android/tabexperiment/PagerAdapter.java
  com.example.android.tabexperiment.PagerAdapter
-com/example/android/tabexperiment/BuildConfig.java
- com.example.android.tabexperiment.BuildConfig
+com/example/android/tabexperiment/MainActivity.java
+ com.example.android.tabexperiment.MainActivity
+ com.example.android.tabexperiment.MainActivity$1

@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 /**
  * This app offers three view fragments and three tabs below the app bar to
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                Log.d("tag", "tab selected!");
                 viewPager.setCurrentItem(tab.getPosition());
             }
 

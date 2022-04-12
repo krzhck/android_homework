@@ -1,6 +1,8 @@
 
 package com.example.tablayout;
 
+import android.util.Log;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -24,8 +26,12 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
-            case 0: return new BrowseAllFragment();
-            case 1: return new BrowseFollowedFragment();
+            case 0: {
+                Log.d("tag", "case 0!");
+                return new BrowseAllFragment();}
+            case 1: {
+                Log.d("tag", "case 1!");
+                return new BrowseFollowedFragment();}
             default: return null;
         }
     }
