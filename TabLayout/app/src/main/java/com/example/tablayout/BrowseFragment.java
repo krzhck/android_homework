@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.widget.Toolbar;
+
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,9 @@ public class BrowseFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ViewPager mViewPager;
+    TabLayout mTabLayout;
+    PagerAdapter mAdapter;
 
     public BrowseFragment() {
         // Required empty public constructor
@@ -61,6 +66,8 @@ public class BrowseFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        //mFragmentManager = getFragmentManager();
+        //mAdapter = new PagerAdapter(mFragmentManager, 2);
     }
 
     @Override
@@ -69,24 +76,26 @@ public class BrowseFragment extends Fragment {
         // Inflate the layout for this fragment
         Log.d("tag", "create view!");
         View rootView = inflater.inflate(R.layout.fragment_browse, container, false);
+        mViewPager = rootView.findViewById(R.id.browse_pager);
 
-        TabLayout tabLayout = (TabLayout) rootView.findViewById(R.id.tab_layout);
+        mTabLayout = rootView.findViewById(R.id.tab_layout);
+        mTabLayout.addTab(mTabLayout.newTab().setText(R.string.title_all));
+        mTabLayout.addTab(mTabLayout.newTab().setText(R.string.title_followed));
+        mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.browse_pager);
-        final PagerAdapter adapter = new PagerAdapter
-                (getFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
+        mAdapter = new PagerAdapter(getFragmentManager(), mTabLayout.getTabCount());
+        mViewPager.setAdapter(mAdapter);
         Log.d("tag", "adapter set!");
 
-        viewPager.addOnPageChangeListener(new
-                TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        mViewPager.addOnPageChangeListener(new
+                TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
 
-        tabLayout.addOnTabSelectedListener(
+        mTabLayout.addOnTabSelectedListener(
             new TabLayout.OnTabSelectedListener() {
                 @Override
                 public void onTabSelected(TabLayout.Tab tab) {
                     Log.d("tag", "tab selected!");
-                    viewPager.setCurrentItem(tab.getPosition());
+                    mViewPager.setCurrentItem(tab.getPosition());
                 }
 
                 @Override
@@ -97,6 +106,7 @@ public class BrowseFragment extends Fragment {
                 public void onTabReselected(TabLayout.Tab tab) {
                 }
             });
-        return inflater.inflate(R.layout.fragment_browse, container, false);
+        return rootView;
+        //return inflater.inflate(R.layout.fragment_browse, container, false);
     }
 }

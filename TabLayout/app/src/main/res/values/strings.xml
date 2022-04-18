@@ -11,6 +11,8 @@
     <string name="title_followed">关注</string>
     <string name="all_posts_content">全部动态内容</string>
     <string name="followed_posts_content">关注动态内容</string>
+    <string name="publish_header_hint">输入标题</string>
+    <string name="publish_content_hint">输入正文</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
