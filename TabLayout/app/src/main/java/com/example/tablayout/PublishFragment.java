@@ -4,9 +4,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +27,13 @@ public class PublishFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TextInputEditText mInputTitle;
+    private TextInputEditText mInputContent;
+    private String mTitle;
+    private String mContent;
+    private Button mSendButton;
+
+
 
     public PublishFragment() {
         // Required empty public constructor
@@ -59,6 +70,16 @@ public class PublishFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_publish, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_browse, container, false);
+        mInputTitle = rootView.findViewById(R.id.input_title);
+        mInputContent = rootView.findViewById(R.id.input_content);
+        mSendButton = rootView.findViewById(R.id.send_button);
+        return rootView;
+    }
+
+    public void publishPost(View view) {
+        mTitle = mInputTitle.getText().toString();
+        mContent = mInputContent.getText().toString();
+
     }
 }

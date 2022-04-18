@@ -14,6 +14,7 @@
         android:layout_marginRight="@dimen/sendbutton_margin"
         android:layout_marginBottom="64dp"
         android:clickable="true"
+        android:onClick="publishPost"
         android:src="@android:drawable/ic_menu_send"
         app:backgroundTint="@color/purple_200" />
 
@@ -27,6 +28,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -39,6 +41,7 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
