@@ -66,19 +66,20 @@ public class BrowseAllFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             Bundle post = new Bundle();
             post.putString("title", "this is a title");
             post.putString("content", "This is the content.");
             mPostList.addFirst(post);
         }
+        /*
         getParentFragmentManager().setFragmentResultListener("add_post_key", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 Log.d("tag", "add post");
                 mPostList.addFirst(result);
             }
-        });
+        });*/
     }
 
     @Override
@@ -91,6 +92,25 @@ public class BrowseAllFragment extends Fragment {
         mAdapter = new PostListAdapter(this.getContext(), mPostList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        /*
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScroll(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (!recyclerView.canScrollVertically(1)) {
+                    if (mPage)
+                }
+            }
+        });*/
+
+        getParentFragmentManager().setFragmentResultListener("add_post_key", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                Log.d("tag", "add post");
+                mPostList.addFirst(result);
+                //mRecyclerView.scrollToPosition(0);
+            }
+        });
         return rootView;
     }
 
