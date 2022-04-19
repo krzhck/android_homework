@@ -2,12 +2,14 @@ package com.example.tablayout;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.widget.Toolbar;
 
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,6 +70,14 @@ public class BrowseFragment extends Fragment {
         }
         //mFragmentManager = getFragmentManager();
         //mAdapter = new PagerAdapter(mFragmentManager, 2);
+        getParentFragmentManager().setFragmentResultListener("send_key", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                //String result = bundle.getString("bundleKey");
+                Log.d("tag", "on result");
+                getFragmentManager().setFragmentResult("add_post_key", result);
+            }
+        });
     }
 
     @Override
@@ -108,5 +118,24 @@ public class BrowseFragment extends Fragment {
             });
         return rootView;
         //return inflater.inflate(R.layout.fragment_browse, container, false);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d("tag", "browse onSaveInstanceState");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("tag", "browse onPause");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mViewPager.setAdapter(mAdapter);
+        Log.d("tag", "browse onResume");
     }
 }

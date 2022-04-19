@@ -13,7 +13,8 @@
         <entry key="app/src/main/res/layout/fragment_personal.xml" value="0.17980072463768115" />
         <entry key="app/src/main/res/layout/fragment_publish.xml" value="0.19343770345052094" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.17980072463768115" />
-        <entry key="app/src/main/res/layout/postlist_item.xml" value="0.17617753623188406" />
+        <entry key="app/src/main/res/layout/post_card_shape.xml" value="0.12291666666666666" />
+        <entry key="app/src/main/res/layout/postlist_item.xml" value="0.195404052734375" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.28229166666666666" />
       </map>
     </option>

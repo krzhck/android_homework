@@ -2,12 +2,18 @@ package com.example.tablayout;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.LinkedList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +30,9 @@ public class BrowseAllFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    //private LinkedList<String> mPostList = new LinkedList<>();
+    private LinkedList<Bundle> mPostList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private PostListAdapter mAdapter;
 
@@ -56,12 +65,50 @@ public class BrowseAllFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        for (int i = 0; i < 20; i++) {
+            Bundle post = new Bundle();
+            post.putString("title", "this is a title");
+            post.putString("content", "This is the content.");
+            mPostList.addFirst(post);
+        }
+        getParentFragmentManager().setFragmentResultListener("add_post_key", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                Log.d("tag", "add post");
+                mPostList.addFirst(result);
+            }
+        });
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_browse_all, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_browse_all, container, false);
+        mRecyclerView = rootView.findViewById(R.id.all_recycler);
+
+        mAdapter = new PostListAdapter(this.getContext(), mPostList);
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d("tag", "browseall onSaveInstanceState");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("tag", "browseall onPause");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("tag", "browseall onResume");
     }
 }

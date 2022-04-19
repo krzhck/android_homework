@@ -8,8 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 /**
@@ -31,7 +31,7 @@ public class PublishFragment extends Fragment {
     private TextInputEditText mInputContent;
     private String mTitle;
     private String mContent;
-    private Button mSendButton;
+    private FloatingActionButton mSendButton;
 
 
 
@@ -70,16 +70,28 @@ public class PublishFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_browse, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_publish, container, false);
         mInputTitle = rootView.findViewById(R.id.input_title);
         mInputContent = rootView.findViewById(R.id.input_content);
         mSendButton = rootView.findViewById(R.id.send_button);
+
+        mSendButton.setOnClickListener(view -> {
+            mTitle = mInputTitle.getText().toString();
+            mContent = mInputContent.getText().toString();
+            // 判断内容非空
+            if (mTitle == null || mTitle.isEmpty() || mContent == null || mContent.isEmpty())
+            {
+                return;
+            }
+            mInputTitle.setText("");
+            mInputContent.setText("");
+            Bundle result = new Bundle();
+            result.putString("title", mTitle);
+            result.putString("content", mContent);
+            getParentFragmentManager().setFragmentResult("send_key", result);
+            Log.d("tag", "send");
+        });
         return rootView;
     }
 
-    public void publishPost(View view) {
-        mTitle = mInputTitle.getText().toString();
-        mContent = mInputContent.getText().toString();
-
-    }
 }
