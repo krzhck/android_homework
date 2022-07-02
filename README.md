@@ -1,2 +1,2 @@
 # android_homework
-for thssandroid[[https://thssandroid.github.io/]] assignments
+for https://thssandroid.github.io assignments
